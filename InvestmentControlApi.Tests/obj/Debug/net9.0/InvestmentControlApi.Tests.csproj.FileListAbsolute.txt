@@ -1,5 +1,3 @@
-C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_InvestmentControlApi.Tests
-C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\CoverletSourceRootsMapping_InvestmentControlApi.Tests
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\testhost.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\InvestmentControlApi.deps.json
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\InvestmentControlApi.runtimeconfig.json
@@ -8,7 +6,7 @@ C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\InvestmentControlApi.staticwebassets.endpoints.json
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\InvestmentControlApi.exe
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\testhost.exe
-C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\xunit.runner.utility.netcoreapp10.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\InvestmentControlApi.Tests.deps.json
@@ -20,8 +18,7 @@ C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
-C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
@@ -37,7 +34,9 @@ C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.TestPlatform.Utilities.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.TestPlatform.Common.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\MySqlConnector.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Andre\Documents\GitHub\desafio-itau-investimentos\InvestmentControlApi.Tests\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

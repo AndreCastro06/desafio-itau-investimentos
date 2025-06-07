@@ -9,16 +9,18 @@ namespace InvestmentControlApi.Application.Services
         public decimal CalcularPrecoMedio(List<Operacao> operacoes)
         {
             if (operacoes == null || !operacoes.Any())
-                throw new ArgumentException("Lista inválida.");
+                throw new ArgumentException("Lista de operações inválida.");
 
-            var compras = operacoes.Where(o => o.Tipo == TipoOperacao.Compra).ToList();
-            if (!compras.Any()) throw new ArgumentException("Sem compras.");
+            var compras = operacoes.Where(o => o.TipoOperacao == TipoOperacao.Compra).ToList();
+            if (!compras.Any())
+                throw new ArgumentException("Não há operações de compra.");
 
-            var totalQtd = compras.Sum(o => o.Quantidade);
-            if (totalQtd == 0) throw new InvalidOperationException("Qtd = 0.");
+            var totalQuantidade = compras.Sum(o => o.Quantidade);
+            if (totalQuantidade == 0)
+                throw new InvalidOperationException("Quantidade total igual a zero.");
 
             var totalValor = compras.Sum(o => o.PrecoUnitario * o.Quantidade);
-            return Math.Round(totalValor / totalQtd, 2);
+            return Math.Round(totalValor / totalQuantidade, 2);
         }
     }
 }

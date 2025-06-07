@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Reflection.Emit;
 using InvestmentControlApi.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +15,7 @@ namespace InvestmentControlApi.Infrastructure.Data
         public DbSet<Ativo> Ativos { get; set; }
         public DbSet<Operacao> Operacoes { get; set; }
         public DbSet<Cotacao> Cotacoes { get; set; }
+        public DbSet<Posicao> Posicoes { get; set; } // <-- adicionado
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +35,16 @@ namespace InvestmentControlApi.Infrastructure.Data
                 .HasMany(a => a.Cotacoes)
                 .WithOne(c => c.Ativo)
                 .HasForeignKey(c => c.AtivoId);
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(u => u.Posicoes)
+                .WithOne(p => p.Usuario)
+                .HasForeignKey(p => p.UsuarioId);
+
+            modelBuilder.Entity<Ativo>()
+                .HasMany(a => a.Posicoes)
+                .WithOne(p => p.Ativo)
+                .HasForeignKey(p => p.AtivoId);
         }
     }
 }

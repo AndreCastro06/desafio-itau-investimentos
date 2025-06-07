@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesKafkaWorker\\Services\\CotacaoService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CotacoesKafkaWorker\\Services\\CotacaoService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesPublisherService\\CotacoesPublisherService.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CotacoesPublisherService\\CotacoesPublisherService.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\InvestmentControlApi\\Domain\\Entities\\Cotacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:InvestmentControlApi\\Domain\\Entities\\Cotacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 289,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CotacoesPublisherService.csproj",
+              "DocumentMoniker": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesPublisherService\\CotacoesPublisherService.csproj",
+              "RelativeDocumentMoniker": "CotacoesPublisherService\\CotacoesPublisherService.csproj",
+              "ToolTip": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesPublisherService\\CotacoesPublisherService.csproj",
+              "RelativeToolTip": "CotacoesPublisherService\\CotacoesPublisherService.csproj",
+              "ViewState": "AgIAAAEAAAAAAAAAAAArwBQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-07T01:35:32.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Cotacao.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\InvestmentControlApi\\Domain\\Entities\\Cotacao.cs",
+              "RelativeDocumentMoniker": "InvestmentControlApi\\Domain\\Entities\\Cotacao.cs",
+              "ToolTip": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\InvestmentControlApi\\Domain\\Entities\\Cotacao.cs",
+              "RelativeToolTip": "InvestmentControlApi\\Domain\\Entities\\Cotacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T01:11:29.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CotacaoService.cs",
+              "DocumentMoniker": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesKafkaWorker\\Services\\CotacaoService.cs",
+              "RelativeDocumentMoniker": "CotacoesKafkaWorker\\Services\\CotacaoService.cs",
+              "ToolTip": "C:\\Users\\Andre\\Documents\\GitHub\\desafio-itau-investimentos\\CotacoesKafkaWorker\\Services\\CotacaoService.cs",
+              "RelativeToolTip": "CotacoesKafkaWorker\\Services\\CotacaoService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-07T01:09:24.068Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 111,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

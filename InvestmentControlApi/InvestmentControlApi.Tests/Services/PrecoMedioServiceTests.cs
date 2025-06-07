@@ -15,8 +15,8 @@ namespace InvestmentControlApi.Tests.Services
             // Arrange
             var operacoes = new List<Operacao>
             {
-                new() { Tipo = TipoOperacao.Compra, Quantidade = 10, PrecoUnitario = 20 },
-                new() { Tipo = TipoOperacao.Compra, Quantidade = 5, PrecoUnitario = 40 }
+                new() { TipoOperacao = TipoOperacao.Compra, Quantidade = 10, PrecoUnitario = 20 },
+                new() { TipoOperacao = TipoOperacao.Compra, Quantidade = 5, PrecoUnitario = 40 }
             };
 
             // Act
@@ -43,7 +43,7 @@ namespace InvestmentControlApi.Tests.Services
             // Arrange
             var operacoes = new List<Operacao>
             {
-                new() { Tipo = TipoOperacao.Venda, Quantidade = 10, PrecoUnitario = 20 }
+                new() { TipoOperacao = TipoOperacao.Venda, Quantidade = 10, PrecoUnitario = 20 }
             };
 
             // Act & Assert
@@ -57,7 +57,7 @@ namespace InvestmentControlApi.Tests.Services
             // Arrange
             var operacoes = new List<Operacao>
             {
-                new() { Tipo = TipoOperacao.Compra, Quantidade = 0, PrecoUnitario = 50 }
+                new() { TipoOperacao = TipoOperacao.Compra, Quantidade = 0, PrecoUnitario = 50 }
             };
 
             // Act & Assert

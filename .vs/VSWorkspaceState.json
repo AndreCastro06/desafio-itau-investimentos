@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\InvestmentControlApi",
+    "\\InvestmentControlApi\\Application",
+    "\\InvestmentControlApi\\Application\\Services",
+    "\\InvestmentControlApi\\Domain",
+    "\\InvestmentControlApi\\Domain\\Entities",
+    "\\InvestmentControlApi\\Domain\\Enums",
+    "\\InvestmentControlApi\\InvestmentControlApi.Tests",
+    "\\InvestmentControlApi\\InvestmentControlApi.Tests\\Services",
+    "\\InvestmentControlApi\\Migrations"
+  ],
+  "SelectedNode": "\\InvestmentControlApi\\Domain\\Entities\\Cotacao.cs",
+  "PreviewInSolutionExplorer": false
+}
