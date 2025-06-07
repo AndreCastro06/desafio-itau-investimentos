@@ -27,6 +27,7 @@ var host = Host.CreateDefaultBuilder(args)
 
         services.AddHostedService<CotacaoScheduler>();
     })
+
     .Build();
 
 host.Run();

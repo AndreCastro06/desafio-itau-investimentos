@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InvestmentControlApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ac2307b7585de013d053fa7e143a9ce51f6f0db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+76f857b027b4f1c9c04568bfb3a10d6670ce00f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("InvestmentControlApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InvestmentControlApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -28,7 +28,7 @@ namespace CotacoesPublisherService.Workers
             {
                 try
                 {
-                    var ativos = new[] { "PETR4", "VALE3", "ITUB4", "BBDC4", "MGLU3" };
+                    var ativos = new[] { "PETR4", "VALE3", "ITUB4", "BBDC4", "MGLU3", "ABEV3", "BBAS3", "B3SA3", "BRFS3", "CSNA3", "CVCB3", "ELET3", "ELET6", "EMBR3", "GGBR4", "GOLL4", "LREN3", "RAIL3", "SUZB3", "WEGE3" };
 
                     foreach (var ativo in ativos)
                     {
