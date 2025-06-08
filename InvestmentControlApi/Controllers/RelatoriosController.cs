@@ -22,11 +22,10 @@ namespace InvestmentControlApi.Controllers
         {
             var corretagemTotal = await _context.Operacoes
                 .Include(o => o.Usuario)
-                .Where(o => o.Usuario != null)
-                .GroupBy(o => new { o.UsuarioId, UsuarioNome = o.Usuario!.Nome })
+                .GroupBy(o => new { o.UsuarioId, o.Usuario.Nome })
                 .Select(g => new
                 {
-                    Usuario = g.Key.UsuarioNome,
+                    Usuario = g.Key.Nome,
                     TotalCorretagem = g.Sum(o => o.Corretagem)
                 })
                 .OrderByDescending(x => x.TotalCorretagem)
@@ -41,18 +40,12 @@ namespace InvestmentControlApi.Controllers
             var precosMedios = await _context.Operacoes
                 .Include(o => o.Usuario)
                 .Include(o => o.Ativo)
-                .Where(o => o.TipoOperacao == TipoOperacao.Compra && o.Usuario != null && o.Ativo != null)
-                .GroupBy(o => new
-                {
-                    o.UsuarioId,
-                    UsuarioNome = o.Usuario!.Nome,
-                    o.AtivoId,
-                    AtivoCodigo = o.Ativo!.Codigo
-                })
+                .Where(o => o.TipoOperacao == TipoOperacao.Compra)
+                .GroupBy(o => new { o.UsuarioId, o.Usuario.Nome, o.AtivoId, o.Ativo.Codigo })
                 .Select(g => new PrecoMedioDTO
                 {
-                    Usuario = g.Key.UsuarioNome,
-                    Ativo = g.Key.AtivoCodigo,
+                    Usuario = g.Key.Nome,
+                    Ativo = g.Key.Codigo,
                     PrecoMedio = Math.Round(
                         g.Sum(x => x.Quantidade * x.PrecoUnitario) / g.Sum(x => x.Quantidade), 2
                     )
@@ -69,11 +62,10 @@ namespace InvestmentControlApi.Controllers
         {
             var topUsuarios = await _context.Posicoes
                 .Include(p => p.Usuario)
-                .Where(p => p.Usuario != null)
-                .GroupBy(p => new { p.UsuarioId, UsuarioNome = p.Usuario!.Nome })
+                .GroupBy(p => new { p.UsuarioId, p.Usuario.Nome })
                 .Select(g => new
                 {
-                    Usuario = g.Key.UsuarioNome,
+                    Usuario = g.Key.Nome,
                     ValorTotalPL = g.Sum(p => p.PL)
                 })
                 .OrderByDescending(x => x.ValorTotalPL)

@@ -10,11 +10,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Banco em memória por enquanto
 builder.Services.AddDbContext<InvestmentDbContext>(options =>
-    options.UseInMemoryDatabase("InvestmentDb"));
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    )
+);
 
-// Serviços de aplicação
 builder.Services.AddScoped<IPosicaoService, PosicaoService>();
 builder.Services.AddScoped<IPrecoMedioService, PrecoMedioService>();
 
@@ -26,10 +28,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "InvestmentControlApi v1");
+        c.SwaggerEndpoint("https://localhost:5183/swagger/v1/swagger.json", "InvestmentControlApi v1");
         c.RoutePrefix = string.Empty; 
     });
 }
+Console.WriteLine(" Connection string usada:");
+Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnection"));
 
 app.UseHttpsRedirection();
 app.UseAuthorization();

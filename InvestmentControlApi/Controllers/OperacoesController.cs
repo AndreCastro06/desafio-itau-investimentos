@@ -43,23 +43,15 @@ namespace InvestmentControlApi.Controllers
         [HttpPost]
         public async Task<ActionResult<OperacaoResponseDTO>> PostOperacao(Operacao operacao)
         {
-            // Adiciona operação no banco
-            _context.Operacoes.Add(operacao);
-            await _context.SaveChangesAsync();
-
-            // Carrega dados do usuário e ativo com verificação explícita
-            var usuario = await _context.Usuarios
-                .Where(u => u.Id == operacao.UsuarioId)
-                .FirstOrDefaultAsync();
-
-            var ativo = await _context.Ativos
-                .Where(a => a.Id == operacao.AtivoId)
-                .FirstOrDefaultAsync();
+            var usuario = await _context.Usuarios.FindAsync(operacao.UsuarioId);
+            var ativo = await _context.Ativos.FindAsync(operacao.AtivoId);
 
             if (usuario == null || ativo == null)
                 return BadRequest("Usuário ou ativo não encontrado.");
 
-            // DTO de resposta
+            _context.Operacoes.Add(operacao);
+            await _context.SaveChangesAsync();
+
             var response = new OperacaoResponseDTO
             {
                 Id = operacao.Id,

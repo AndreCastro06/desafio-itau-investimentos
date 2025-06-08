@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CotacoesKafkaWorker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ac2307b7585de013d053fa7e143a9ce51f6f0db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c40c8d848af61351591c849c80e9dc8a15d5c0d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CotacoesKafkaWorker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CotacoesKafkaWorker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -15,7 +15,7 @@ namespace InvestmentControlApi.Infrastructure.Data
         public DbSet<Ativo> Ativos { get; set; }
         public DbSet<Operacao> Operacoes { get; set; }
         public DbSet<Cotacao> Cotacoes { get; set; }
-        public DbSet<Posicao> Posicoes { get; set; } // <-- adicionado
+        public DbSet<Posicao> Posicoes { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
