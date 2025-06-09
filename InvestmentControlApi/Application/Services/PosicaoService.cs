@@ -47,9 +47,9 @@ public class PosicaoService : IPosicaoService
             if (ultimaCotacao == null)
                 continue;
 
-            var pnl = (ultimaCotacao.PrecoUnitario - precoMedio) * quantidade;
+            var precoAtual = ultimaCotacao.PrecoUnitario;
+            var pnl = (precoAtual - precoMedio) * quantidade;
 
-            // Verifica se a posição já existe
             var posicaoExistente = await _context.Posicoes
                 .FirstOrDefaultAsync(p => p.UsuarioId == grupo.Key.UsuarioId && p.AtivoId == grupo.Key.AtivoId);
 
@@ -57,6 +57,7 @@ public class PosicaoService : IPosicaoService
             {
                 posicaoExistente.Quantidade = quantidade;
                 posicaoExistente.PrecoMedio = precoMedio;
+                posicaoExistente.PrecoAtual = precoAtual;
                 posicaoExistente.PL = pnl;
             }
             else
@@ -67,6 +68,7 @@ public class PosicaoService : IPosicaoService
                     AtivoId = grupo.Key.AtivoId,
                     Quantidade = quantidade,
                     PrecoMedio = precoMedio,
+                    PrecoAtual = precoAtual,
                     PL = pnl
                 };
 

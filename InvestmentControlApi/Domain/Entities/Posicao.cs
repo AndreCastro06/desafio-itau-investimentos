@@ -25,6 +25,9 @@ namespace InvestmentControlApi.Domain.Entities
         [Column("p_l", TypeName = "decimal(18,4)")]
         public decimal PL { get; set; }
 
+        [Column("preco_atual", TypeName = "decimal(18,4)")]
+        public decimal PrecoAtual { get; set; }
+
         public Usuario? Usuario { get; set; }
         public Ativo? Ativo { get; set; }
     }

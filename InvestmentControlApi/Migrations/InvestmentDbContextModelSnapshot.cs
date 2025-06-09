@@ -160,6 +160,10 @@ namespace InvestmentControlApi.Migrations
                         .HasColumnType("decimal(18,4)")
                         .HasColumnName("p_l");
 
+                    b.Property<decimal>("PrecoAtual")
+                        .HasColumnType("decimal(18,4)")
+                        .HasColumnName("preco_atual");
+
                     b.Property<decimal>("PrecoMedio")
                         .HasColumnType("decimal(18,4)")
                         .HasColumnName("preco_medio");

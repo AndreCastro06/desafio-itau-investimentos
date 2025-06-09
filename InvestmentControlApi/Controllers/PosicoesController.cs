@@ -19,7 +19,7 @@ namespace InvestmentControlApi.Controllers
         public async Task<IActionResult> Atualizar()
         {
             await _posicaoService.AtualizarPosicoesAsync();
-            return Ok("Posições atualizadas com sucesso.");
+            return Ok("Posicoes atualizadas com sucesso.");
         }
     }
 }

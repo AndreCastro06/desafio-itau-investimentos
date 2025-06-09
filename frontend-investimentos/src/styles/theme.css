@@ -1,0 +1,7 @@
+.text-orange {
+  @apply text-orange-500;
+}
+
+.bg-orange {
+  @apply bg-gradient-to-b from-[#ff9900] to-[#ff6600];
+}

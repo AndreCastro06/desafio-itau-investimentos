@@ -42,5 +42,15 @@ namespace InvestmentControlApi.Controllers
 
             return CreatedAtAction(nameof(GetUsuario), new { id = usuario.Id }, usuario);
         }
+        [HttpGet("buscar")]
+        public async Task<ActionResult<IEnumerable<object>>> BuscarUsuarios([FromQuery] string nome)
+        {
+            var usuarios = await _context.Usuarios
+                .Where(u => string.IsNullOrEmpty(nome) || u.Nome.Contains(nome))
+                .Select(u => new { u.Id, u.Nome })
+                .ToListAsync();
+
+            return Ok(usuarios);
+        }
     }
 }

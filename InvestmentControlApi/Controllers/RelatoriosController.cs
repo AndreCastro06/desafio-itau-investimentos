@@ -25,6 +25,7 @@ namespace InvestmentControlApi.Controllers
                 .GroupBy(o => new { o.UsuarioId, o.Usuario.Nome })
                 .Select(g => new
                 {
+                    UsuarioId = g.Key.UsuarioId,
                     Usuario = g.Key.Nome,
                     TotalCorretagem = g.Sum(o => o.Corretagem)
                 })
@@ -32,6 +33,15 @@ namespace InvestmentControlApi.Controllers
                 .ToListAsync();
 
             return Ok(corretagemTotal);
+        }
+
+        [HttpGet("posicoes-total")]
+        public async Task<IActionResult> GetValorTotalCarteira()
+        {
+            var total = await _context.Posicoes
+                .SumAsync(p => p.Quantidade * p.PrecoAtual);
+
+            return Ok(total);
         }
 
         [HttpGet("preco-medio")]
@@ -73,6 +83,49 @@ namespace InvestmentControlApi.Controllers
                 .ToListAsync();
 
             return Ok(topUsuarios);
+        }
+
+        [HttpGet("posicoes-usuario/{usuarioId}")]
+        public async Task<ActionResult<IEnumerable<object>>> GetPosicoesPorUsuario(int usuarioId)
+        {
+            var posicoes = await _context.Posicoes
+                .Include(p => p.Ativo)
+                .Where(p => p.UsuarioId == usuarioId)
+                .Select(p => new
+                {
+                    Ativo = p.Ativo.Codigo,
+                    Quantidade = p.Quantidade,
+                    PrecoMedio = p.PrecoMedio,
+                    PrecoAtual = p.PrecoAtual,
+                    PL = p.PL
+                })
+                .ToListAsync();
+
+            return Ok(posicoes);
+        }
+
+        [HttpGet("resumo-financeiro/{usuarioId}")]
+        public async Task<ActionResult<ResumoFinanceiroDTO>> GetResumoFinanceiro(int usuarioId)
+        {
+            var posicoes = await _context.Posicoes
+                .Where(p => p.UsuarioId == usuarioId)
+                .ToListAsync();
+
+            if (posicoes == null || posicoes.Count == 0)
+                return NotFound();
+
+            var totalInvestido = posicoes.Sum(p => p.Quantidade * p.PrecoMedio);
+            var carteiraAtual = posicoes.Sum(p => p.Quantidade * p.PrecoAtual);
+            var lucroPrejuizo = carteiraAtual - totalInvestido;
+
+            var resumo = new ResumoFinanceiroDTO
+            {
+                TotalInvestido = Math.Round(totalInvestido, 2),
+                CarteiraAtual = Math.Round(carteiraAtual, 2),
+                LucroPrejuizo = Math.Round(lucroPrejuizo, 2)
+            };
+
+            return Ok(resumo);
         }
     }
 }

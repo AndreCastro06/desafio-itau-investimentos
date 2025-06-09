@@ -53,6 +53,7 @@
 - pl DECIMAL(10,2) Profit & Loss: (preco_atual - preco_medio) * quantidade  
 
 #### Justificativas Técnicas
+
 - DECIMAL para precisão em cálculos financeiros  
 - ENUM para limitar valores válidos  
 - Chaves estrangeiras garantem integridade referencial  
@@ -72,16 +73,41 @@ ON operacoes (usuario_id, ativo_id, data_hora DESC);
 CREATE INDEX idx_cotacoes_ativo_data
 ON cotacoes (ativo_id, data_hora DESC);
 
-### 3. Aplicação em .NET Core com C#
+SELECT * FROM operacoes
+WHERE usuario_id = ? AND ativo_id = ? AND data_hora >= NOW() - INTERVAL 30 DAY
+ORDER BY data_hora DESC;
 
-#### Estrutura do Projeto
 
-- Domain: Entidades e enums do domínio  
-- Application: Serviços e lógica (PrecoMedioService, PosicaoService)  
-- Infrastructure: Integração com banco de dados e serviços externos  
-- API: Endpoints REST com documentação Swagger  
-- Worker: Serviço Kafka para atualização de cotações  
-- Tests: Testes unitários com xUnit  
+###3. Aplicação em .NET Core com C#
+
+Foi desenvolvida uma aplicação completa em .NET Core 8 utilizando boas práticas de arquitetura, separação de responsabilidades e integração com banco relacional (MySQL). A aplicação permite o acompanhamento de investimentos, com exibição do total investido por ativo, posição atual, lucro/prejuízo (P&L) e total de corretagem por cliente.
+
+##Estrutura do Projeto:
+
+- Domain: Define as entidades de negócio (Usuário, Ativo, Operação, Cotação, Posição) e enums como TipoOperacao.
+- Application: Contém os serviços com regras de negócio, como PrecoMedioService (cálculo de preço médio ponderado) e PosicaoService (geração de posições e P&L).
+- Infrastructure: Responsável pela persistência via Entity Framework (MySQL) e integração com Kafka no CotacoesKafkaWorker.
+- API: Expõe endpoints RESTful utilizando ASP.NET Core, com documentação gerada via Swagger/OpenAPI 3.0.
+- Worker: Serviço separado para consumir cotações via Kafka e atualizar dinamicamente as posições no banco.
+- Tests: Implementação de testes unitários com xUnit, cobrindo casos positivos e negativos de cálculo do preço médio.
+
+## Tecnologias Utilizadas:
+
+- .NET Core 8
+- Entity Framework Core (MySQL)
+- xUnit (testes unitários)
+- Kafka (.NET Worker Service)
+- Swagger (documentação OpenAPI 3.0)
+- React + Tailwind
+
+## Boas Práticas Aplicadas:
+
+- Separação clara em camadas (Domain, Application, Infrastructure)
+- Uso de async/await com Entity Framework
+- Injeção de dependência, princípios SOLID e foco em coesão
+- Responsabilidade única por classe e organização modular
+- Documentação clara e rastreável dos endpoints REST
+- Atualização em tempo real das posições via consumo de eventos Kafka
 
 ---
 

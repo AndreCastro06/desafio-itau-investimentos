@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CotacoesKafkaWorker",
-    "\\InvestmentControlApi"
+    "\\InvestmentControlApi",
+    "\\InvestmentControlApi\\Application",
+    "\\InvestmentControlApi\\bin",
+    "\\InvestmentControlApi\\Controllers"
   ],
-  "SelectedNode": "\\InvestmentControlApi\\Program.cs",
+  "SelectedNode": "\\InvestmentControlApi\\Controllers\\RelatoriosController.cs",
   "PreviewInSolutionExplorer": false
 }

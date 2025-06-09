@@ -19,15 +19,6 @@ namespace InvestmentControlApi.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cotacao>>> GetTodas()
-        {
-            return await _context.Cotacoes
-                .Include(c => c.Ativo)
-                .OrderByDescending(c => c.DataHora)
-                .ToListAsync();
-        }
-
         [HttpGet("ultimo/{ativoId}")]
         public async Task<ActionResult<Cotacao>> GetUltimaCotacao(int ativoId)
         {
@@ -50,5 +41,23 @@ namespace InvestmentControlApi.Controllers
 
             return CreatedAtAction(nameof(GetUltimaCotacao), new { ativoId = cotacao.AtivoId }, cotacao);
         }
+
+    [HttpGet("ativo/{codigo}")]
+        public async Task<ActionResult<IEnumerable<object>>> GetPorCodigo(string codigo)
+        {
+            var cotacoes = await _context.Cotacoes
+                .Include(c => c.Ativo)
+                .Where(c => c.Ativo.Codigo == codigo)
+                .OrderBy(c => c.DataHora)
+                .Select(c => new
+                {
+                    c.DataHora,
+                    c.PrecoUnitario
+                })
+                .ToListAsync();
+
+            return cotacoes;
+        }
+
     }
 }
