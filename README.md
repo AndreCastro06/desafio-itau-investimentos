@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/ad958193-d1c8-49df-97a3-0c8c34896788)##### Sistema de Controle de Investimentos
+##### Sistema de Controle de Investimentos
 
 #### Índice
 - Modelagem de Banco de Dados (MySQL)
