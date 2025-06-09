@@ -10,6 +10,9 @@
 - Resiliência e Circuit Breaker
 - Escalabilidade e Balanceamento
 - APIs REST + OpenAPI
+- Inserção de Dados 
+- Funcionalidades Adicionais
+- Preparação para Produção
 
 ---
 
@@ -67,6 +70,7 @@
 
 **Índices criados**
 ```sql
+
 CREATE INDEX idx_operacoes_usuario_ativo_data
 ON operacoes (usuario_id, ativo_id, data_hora DESC);
 
@@ -77,8 +81,9 @@ SELECT * FROM operacoes
 WHERE usuario_id = ? AND ativo_id = ? AND data_hora >= NOW() - INTERVAL 30 DAY
 ORDER BY data_hora DESC;
 
+````
 
-###3. Aplicação em .NET Core com C#
+### 3. Aplicação em .NET Core com C#
 
 Foi desenvolvida uma aplicação completa em .NET Core 8 utilizando boas práticas de arquitetura, separação de responsabilidades e integração com banco relacional (MySQL). A aplicação permite o acompanhamento de investimentos, com exibição do total investido por ativo, posição atual, lucro/prejuízo (P&L) e total de corretagem por cliente.
 
@@ -235,7 +240,18 @@ https://localhost:5183/swagger/index.html
 
 ---
 
-### 10. Extras Realizados
+### Inserção de Dados para Testes
+
+Após subir o banco (criado automaticamente pelas migrations), você pode inserir dados usados no desenvolvimento executando:
+
+```bash
+
+mysql -u root -p investimentosdb < docs/mock_data.sql
+
+````
+
+---
+
 
 #### Funcionalidades Adicionais
 
@@ -245,7 +261,9 @@ https://localhost:5183/swagger/index.html
 - Atualização em tempo real das posições com base nas últimas cotações recebidas via Kafka  
 - Testes de comportamento adverso (vendas sem compras, compras inválidas, cotações duplicadas)  
 - Integração validada com API pública da B3 para simulação de fluxo real de mercado  
-- Worker separado e desacoplado da API, garantindo resiliência e escalabilidade  
+- Worker separado e desacoplado da API, garantindo resiliência e escalabilidade
+
+---
 
 #### Preparação para Produção
 
@@ -254,4 +272,4 @@ https://localhost:5183/swagger/index.html
 - Estrutura compatível com orquestração em Docker Compose ou Kubernetes  
 - Código pronto para extensões como autenticação, autorização, cache e notificações  
 
----
+
