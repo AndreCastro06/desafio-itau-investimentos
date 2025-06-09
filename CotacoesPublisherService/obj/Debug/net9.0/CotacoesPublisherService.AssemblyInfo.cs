@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CotacoesPublisherService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5e6c0182e0adaae36437bdd40629e4c2ad1795d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be2f4d852970ec3d3e8316116a88308ea5b5e497")]
 [assembly: System.Reflection.AssemblyProductAttribute("CotacoesPublisherService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CotacoesPublisherService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
