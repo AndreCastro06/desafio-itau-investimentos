@@ -248,7 +248,7 @@ Após subir o banco (criado automaticamente pelas migrations), você pode inseri
 
 mysql -u root -p investimentosdb < docs/mock_data.sql
 
-````
+```
 
 ---
 
