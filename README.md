@@ -13,6 +13,7 @@
 - Inserção de Dados 
 - Funcionalidades Adicionais
 - Preparação para Produção
+- 
 
 ---
 
@@ -240,7 +241,7 @@ https://localhost:5183/swagger/index.html
 
 ---
 
-### Inserção de Dados para Testes
+### 10. Inserção de Dados para Testes
 
 Após subir o banco (criado automaticamente pelas migrations), você pode inserir dados usados no desenvolvimento executando:
 
@@ -253,11 +254,10 @@ mysql -u root -p investimentosdb < docs/mock_data.sql
 ---
 
 
-#### Funcionalidades Adicionais
+#### 11. Funcionalidades Adicionais
 
 - Endpoint para cálculo de preço médio por usuário e ativo (`/api/preco-medio/usuario/{usuarioId}/ativo/{ativoId}`)  
-- Endpoint para relatório de corretagem total acumulada  
-- Endpoint para Top 10 usuários com maiores posições ativas  
+- Endpoint para relatório de corretagem total acumulada   
 - Atualização em tempo real das posições com base nas últimas cotações recebidas via Kafka  
 - Testes de comportamento adverso (vendas sem compras, compras inválidas, cotações duplicadas)  
 - Integração validada com API pública da B3 para simulação de fluxo real de mercado  
@@ -265,11 +265,19 @@ mysql -u root -p investimentosdb < docs/mock_data.sql
 
 ---
 
-#### Preparação para Produção
+#### 12. Preparação para Produção
 
 - Projeto separado em camadas (Domain, Application, Infrastructure, API, Worker)  
 - Aplicação preparada para execução em containers (Docker)  
 - Estrutura compatível com orquestração em Docker Compose ou Kubernetes  
-- Código pronto para extensões como autenticação, autorização, cache e notificações  
+- Código pronto para extensões como autenticação, autorização, cache e notificações
 
+### 13. Observações Finais
 
+Durante o desenvolvimento, algumas funcionalidades além das obrigatórias foram idealizadas e parcialmente iniciadas, mas não implementadas integralmente devido à priorização do escopo principal e à limitação de tempo. Entre elas:
+
+Montagem de gráficos analíticos: a estrutura para endpoints relacionados já se encontra presente nas controllers, visando futuras visualizações de desempenho e histórico de investimentos. No entanto, a renderização dos gráficos no front-end e a lógica de cálculo ainda não foram concluídas.
+
+Dashboard analítico completo: a versão atual do front-end apresenta cards dinâmicos e posições consolidadas, mas ainda não inclui os gráficos evolutivos planejados inicialmente.
+
+Esses pontos foram considerados extras não obrigatórios, pensados para serem desenvolvidos caso houvesse tempo hábil. Por isso, foram postergados, a fim de não comprometer a entrega técnica essencial do projeto.
