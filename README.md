@@ -13,8 +13,9 @@
 - Inserção de Dados 
 - Funcionalidades Adicionais
 - Preparação para Produção
-- Observações Finais
 - Dicas para Resolução de Problema de senha incache
+- Observações Finais
+
 
 ---
 
@@ -275,7 +276,11 @@ mysql -u root -p investimentosdb < docs/mock_data.sql
 - Estrutura compatível com orquestração em Docker Compose ou Kubernetes  
 - Código pronto para extensões como autenticação, autorização, cache e notificações
 
-### 13. Observações Finais
+### 13. Dicas de Execução e Resolução de Problemas
+
+Caso ocorra falha de conexão com o banco de dados (ex: Access denied for user 'root'@'172.18.0.1' (using password: NO), é possível forçar a atualização do banco via linha de comando com uma string de conexão explícita: dotnet ef database update --connection "server=localhost;port=3306;database=investimentosdb;user=root;password=root"
+
+### 14. Observações Finais
 
 Durante o desenvolvimento, algumas funcionalidades além das obrigatórias foram idealizadas e parcialmente iniciadas, mas não implementadas integralmente devido à priorização do escopo principal e à limitação de tempo. Entre elas:
 
@@ -285,6 +290,4 @@ Dashboard analítico completo: a versão atual do front-end apresenta cards din�
 
 Esses pontos foram considerados extras não obrigatórios, pensados para serem desenvolvidos caso houvesse tempo hábil. Por isso, foram postergados, a fim de não comprometer a entrega técnica essencial do projeto.
 
-### 14. Dicas de Execução e Resolução de Problemas
 
-Caso ocorra falha de conexão com o banco de dados (ex: Access denied for user 'root'@'172.18.0.1' (using password: NO), é possível forçar a atualização do banco via linha de comando com uma string de conexão explícita: dotnet ef database update --connection "server=localhost;port=3306;database=investimentosdb;user=root;password=root"
