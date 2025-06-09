@@ -1,4 +1,4 @@
-##### Sistema de Controle de Investimentos
+![image](https://github.com/user-attachments/assets/ad958193-d1c8-49df-97a3-0c8c34896788)##### Sistema de Controle de Investimentos
 
 #### Índice
 - Modelagem de Banco de Dados (MySQL)
@@ -13,7 +13,8 @@
 - Inserção de Dados 
 - Funcionalidades Adicionais
 - Preparação para Produção
-- 
+- Observações Finais
+- Dicas para Resolução de Problema de senha incache
 
 ---
 
@@ -83,6 +84,8 @@ WHERE usuario_id = ? AND ativo_id = ? AND data_hora >= NOW() - INTERVAL 30 DAY
 ORDER BY data_hora DESC;
 
 ````
+Utilizar em caso de falha de conexão com o banco por senha: dotnet ef database update --connection "server=localhost;port=3306;database=investimentosdb;user=root;password=root"
+
 
 ### 3. Aplicação em .NET Core com C#
 
@@ -281,3 +284,7 @@ Montagem de gráficos analíticos: a estrutura para endpoints relacionados já s
 Dashboard analítico completo: a versão atual do front-end apresenta cards dinâmicos e posições consolidadas, mas ainda não inclui os gráficos evolutivos planejados inicialmente.
 
 Esses pontos foram considerados extras não obrigatórios, pensados para serem desenvolvidos caso houvesse tempo hábil. Por isso, foram postergados, a fim de não comprometer a entrega técnica essencial do projeto.
+
+### 14. Dicas de Execução e Resolução de Problemas
+
+Caso ocorra falha de conexão com o banco de dados (ex: Access denied for user 'root'@'172.18.0.1' (using password: NO), é possível forçar a atualização do banco via linha de comando com uma string de conexão explícita: dotnet ef database update --connection "server=localhost;port=3306;database=investimentosdb;user=root;password=root"
